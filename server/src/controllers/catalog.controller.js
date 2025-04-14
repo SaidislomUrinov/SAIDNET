@@ -34,11 +34,10 @@ export default {
     },
     edit: async (req, res) => {
         try {
-            const { id } = req.query;
+            const { id, name } = req.body;
 
             if (!id) throw new Error("Catalog ID is required");
 
-            const { name } = req.body;
             const image = req?.files?.image;
 
             const catalog = await catalogService.edit(id, { name, image });

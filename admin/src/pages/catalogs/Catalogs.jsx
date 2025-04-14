@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { FaSadTear } from "react-icons/fa";
 import Add from "./Add";
 import List from "./List";
+import Edit from "./Edit";
 
 function Catalogs() {
   const [catalogs, setCatalogs] = useState([]);
@@ -55,6 +56,7 @@ function Catalogs() {
       )}
       {/*  */}
       <Add setCatalogs={setCatalogs} />
+      <Edit setCatalogs={setCatalogs} catalogs={catalogs} />
     </div>
   );
 }

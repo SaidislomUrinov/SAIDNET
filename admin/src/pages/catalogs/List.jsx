@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 function List({ catalogs }) {
   const nv = useNavigate();
   return (
-    <div className="flex items-start justify-start flex-col">
+    <div className="flex items-start justify-start flex-col w-full sm:w-auto overflow-x-scroll sm:overflow-x-auto">
       {/* STURCT */}
       <div className="flex items-center rounded-t-[10px] justify-start bg-zinc-700 h-[40px]">
         {/* # */}

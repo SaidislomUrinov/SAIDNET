@@ -30,8 +30,8 @@ export default {
         catalog.name = name;
 
         if (image) {
-            removeImage(catalog.image);
-            const filePath = uploadImage(image, 'catalogs', catalog._id);
+            await removeImage(catalog.image);
+            const filePath = await uploadImage(image, 'catalogs', catalog._id);
             catalog.image = filePath;
         }
 
