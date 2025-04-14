@@ -5,6 +5,7 @@ import { Button, Spinner } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 import { FaSadTear } from "react-icons/fa";
 import Add from "./Add";
+import List from "./List";
 
 function Catalogs() {
   const [catalogs, setCatalogs] = useState([]);
@@ -28,7 +29,7 @@ function Catalogs() {
   //
   const nv = useNavigate();
   return (
-    <div className="flex items-center justify-start flex-col w-full">
+    <div className="flex gap-[10px] items-start justify-start flex-col w-full">
       {!load && (
         <div className="w-full flex-col h-[50vh] gap-2 flex items-center justify-center">
           <Spinner color="green" className="w-[40px] h-[40px]" />
@@ -43,6 +44,14 @@ function Catalogs() {
             Add new catalog
           </Button>
         </div>
+      )}
+      {load && catalogs[0] && (
+        <>
+          <Button onClick={() => nv("#add")} color="green">
+            Add new catalog
+          </Button>
+          <List catalogs={catalogs} />
+        </>
       )}
       {/*  */}
       <Add setCatalogs={setCatalogs} />

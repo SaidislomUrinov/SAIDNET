@@ -19,7 +19,7 @@ function App() {
         const { ok, data } = res;
         if (ok) {
           dp(updateUser(data));
-          nv("/dashboard");
+          // nv("/dashboard");
         }
       })
       .finally(() => {
@@ -45,7 +45,7 @@ function App() {
         {/* top */}
         <Top />
         {/* content */}
-        <div className="flex items-center justify-start flex-col w-full h-[90vh]">
+        <div className="flex p-[10px] items-start justify-start flex-col w-full h-[90vh]">
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route path="/catalogs" element={<Catalogs />} />
