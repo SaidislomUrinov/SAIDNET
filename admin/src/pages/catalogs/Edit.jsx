@@ -5,6 +5,7 @@ import {
   DialogFooter,
   DialogHeader,
   Input,
+  Textarea,
 } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -18,11 +19,12 @@ function Edit({ setCatalogs, catalogs }) {
   const [form, setForm] = useState({
     _id: "",
     name: "",
+    desc: "",
     image: "",
     newImage: "",
   });
   const close = () => {
-    setForm({ _id: "", name: "", image: "" });
+    setForm({ _id: "", name: "", image: "", desc: "" });
     nv("#");
   };
 
@@ -32,6 +34,7 @@ function Edit({ setCatalogs, catalogs }) {
       const formData = new FormData();
       formData.append("id", form._id);
       formData.append("name", form.name);
+      formData.append("desc", form.desc);
       if (form.newImage) formData.append("image", form.newImage);
       const { ok, msg, data } = await put("/catalog/edit", formData);
       if (!ok) throw new Error(msg);
@@ -79,13 +82,20 @@ function Edit({ setCatalogs, catalogs }) {
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           value={form.name}
         />
+        <Textarea
+          color="green"
+          variant="standard"
+          label="Description"
+          onChange={(e) => setForm({ ...form, desc: e.target.value })}
+          value={form.desc}
+        />
       </DialogBody>
       <DialogFooter className="gap-[10px]">
         <Button disabled={disabled} variant="text" onClick={close}>
           Close
         </Button>
         <Button loading={disabled} onClick={submit} color="green">
-          Create
+          Save
         </Button>
       </DialogFooter>
     </Dialog>

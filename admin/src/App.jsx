@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Top from "./components/Top";
 import { Route, Routes, useNavigate } from "react-router-dom";
 const Catalogs = lazy(() => import("./pages/catalogs/Catalogs"));
+const Projects = lazy(() => import("./pages/projects/Projects"));
 function App() {
   const { _id } = useSelector((e) => e.user);
   const dp = useDispatch();
@@ -49,6 +50,7 @@ function App() {
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route path="/catalogs" element={<Catalogs />} />
+              <Route path="/projects" element={<Projects />} />
             </Routes>
           </Suspense>
         </div>

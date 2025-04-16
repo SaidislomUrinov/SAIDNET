@@ -2,10 +2,10 @@ import catalogService from "../services/catalog.service.js";
 export default {
     create: async (req, res) => {
         try {
-            const { name } = req.body;
+            const { name, desc } = req.body;
             const image = req?.files?.image;
 
-            const catalog = await catalogService.create({ name, image });
+            const catalog = await catalogService.create({ name, desc, image });
             return res.send({
                 ok: true,
                 msg: "Catalog created successfully",
@@ -34,13 +34,13 @@ export default {
     },
     edit: async (req, res) => {
         try {
-            const { id, name } = req.body;
+            const { id, name, desc } = req.body;
 
             if (!id) throw new Error("Catalog ID is required");
 
             const image = req?.files?.image;
 
-            const catalog = await catalogService.edit(id, { name, image });
+            const catalog = await catalogService.edit(id, { name, desc, image });
             return res.send({
                 ok: true,
                 msg: "Catalog updated successfully",

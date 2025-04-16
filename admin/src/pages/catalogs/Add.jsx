@@ -5,6 +5,7 @@ import {
   DialogFooter,
   DialogHeader,
   Input,
+  Textarea,
 } from "@material-tailwind/react";
 import { useState } from "react";
 import { RiImageAddFill } from "react-icons/ri";
@@ -19,9 +20,10 @@ function Add({ setCatalogs }) {
   const [form, setForm] = useState({
     name: "",
     image: "",
+    desc: "",
   });
   const close = () => {
-    setForm({ name: "", image: "" });
+    setForm({ name: "", image: "", desc: "" });
     nv("#");
   };
 
@@ -31,6 +33,7 @@ function Add({ setCatalogs }) {
       const formData = new FormData();
       formData.append("name", form.name);
       formData.append("image", form.image);
+      formData.append("desc", form.desc);
       const { ok, msg, data } = await post("/catalog/create", formData);
       if (!ok) throw new Error(msg);
       setCatalogs((prev) => [...prev, data]);
@@ -68,6 +71,13 @@ function Add({ setCatalogs }) {
           required
           onChange={(e) => setForm({ ...form, name: e.target.value })}
           value={form.name}
+        />
+        <Textarea
+          color="green"
+          variant="standard"
+          label="Description"
+          onChange={(e) => setForm({ ...form, desc: e.target.value })}
+          value={form.desc}
         />
       </DialogBody>
       <DialogFooter className="gap-[10px]">

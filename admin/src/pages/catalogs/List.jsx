@@ -40,7 +40,7 @@ function List({ catalogs }) {
           <div
             key={i}
             className={`flex items-center justify-start bg-white h-[60px] ${
-              lastIndex === i ? "rounded-b-[10px]" : ""
+              lastIndex === i ? "rounded-b-[10px]" : "border-b border-zinc-500"
             }`}
           >
             {/* # */}
