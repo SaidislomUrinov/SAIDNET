@@ -10,7 +10,8 @@ const allowedImageTypes = [
     'image/bmp',
     'image/svg+xml',
     'image/jpg',
-    'image/tiff'
+    'image/tiff',
+    'image/avif'
 ];
 
 /**

@@ -7,6 +7,8 @@ router.post('/create', adminMiddleware, projectController.create);
 router.get('/list', projectController.list);
 router.put('/update/info', adminMiddleware, projectController.updateInfo);
 router.put('/update/image', adminMiddleware, projectController.updateImage);
-router.delete('/update/image', adminMiddleware, projectController.delete);
+router.post('/update/image', adminMiddleware, projectController.addImage);
+router.delete('/delete/image', adminMiddleware, projectController.deleteImage);
+router.delete('/delete', adminMiddleware, projectController.delete);
 
 export default router;

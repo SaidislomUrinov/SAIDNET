@@ -1,0 +1,10 @@
+{
+    "lang": "en",
+    "nav": {
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact",
+        "request": "Send a request"
+    }
+}

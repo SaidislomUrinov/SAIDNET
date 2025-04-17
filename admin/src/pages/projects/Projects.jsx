@@ -4,6 +4,9 @@ import { get } from "../../utils/fetching";
 import { Button, Spinner } from "@material-tailwind/react";
 import { FaSadTear } from "react-icons/fa";
 import Add from "./Add";
+import List from "./List";
+import EditInfo from "./EditInfo";
+import EditImage from "./EditImage";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -30,7 +33,7 @@ function Projects() {
     });
   }, []);
   return (
-    <div className="flex items-start justify-start flex-col w-full">
+    <div className="flex gap-[10px] items-start justify-start flex-col w-full">
       {!load && (
         <div className="w-full flex-col h-[50vh] gap-2 flex items-center justify-center">
           <Spinner color="green" className="w-[40px] h-[40px]" />
@@ -51,12 +54,17 @@ function Projects() {
           <Button onClick={() => nv("#add")} color="green">
             Add new catalog
           </Button>
-          {/* <List catalogs={catalogs} /> */}
+          <List projects={projects} />
         </>
       )}
       {/*  */}
       <Add setProjects={setProjects} catalogs={catalogs} />
-      {/* <Edit setCatalogs={setCatalogs} catalogs={catalogs} /> */}
+      <EditInfo
+        setProjects={setProjects}
+        projects={projects}
+        catalogs={catalogs}
+      />
+      <EditImage projects={projects} setProjects={setProjects} />
     </div>
   );
 }

@@ -70,6 +70,23 @@ export default {
             images: project.images,
         }
     },
+    deleteImage: async (id, index) => {
+        const project = await Project.findById(id);
+        if (!project) throw new Error("Project not found");
+
+        if (!project.images[index]) throw new Error("Image not found");
+
+        if (project.images.length < 2) throw new Error("At least one image is required");
+
+        await removeImage(project.images[index]);
+        project.images.splice(index, 1);
+        await project.save();
+
+        return {
+            _id: project._id,
+            images: project.images,
+        }
+    },
     list: async () => {
         const projects = await Project.find({}).sort({ created: -1 }).populate("catalogs");
         return projects.map(project => ({
@@ -90,4 +107,16 @@ export default {
             _id: project._id,
         };
     },
+    addImage: async (id, image) => {
+        const project = await Project.findById(id);
+        if (!project) throw new Error("Project not found");
+
+        if (!image) throw new Error("Missing required fields");
+        project.images.push(await uploadImage(image, 'projects', `${project.images.length}_${id}`));
+        await project.save();
+        return {
+            _id: project._id,
+            images: project.images,
+        }
+    }
 }

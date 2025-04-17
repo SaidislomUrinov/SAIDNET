@@ -1,0 +1,28 @@
+{
+    "lang": "uz",
+    "nav": {
+        "about": "Men haqimda",
+        "skills": "Mahoratlar",
+        "projects": "Loyihalar",
+        "contact": "Aloqa",
+        "request": "So'rov qoldirish"
+    },
+    "request": {
+        "title": "So'rov qoldirish",
+        "text": "Pastdagi formani to'ldiring biz esa siz bilan aloqaga chiqamiz",
+        "name": "Ismingiz",
+        "phone": "Telefon raqamingiz",
+        "telegram": "Telegram @username ( Ixtiyoriy )",
+        "message": "Xabaringiz...",
+        "type": "Sizga qanday aloqaga chiqsak ma'qul?",
+        "via": {
+            "phone": "Qo'ngiroq orqali",
+            "telegram": "Telegram orqali"
+        },
+        "submit": "Yuborish",
+        "success": "Xabaringiz muvaffaqiyatli yuborildi va tez orada siz bilan aloqaga chiqamiz",
+        "fill": "Iltimos, majburiy maydonlarni to'ldiring",
+        "telegram_error": "Telegram @username noto'g'ri kiritilgan",
+        "telegram_via_error": "Iltimos, telegram orqali aloqaga chiqish uchun @username kiritishingiz kerak"
+    }
+}

@@ -71,6 +71,23 @@ export default {
             });
         }
     },
+    deleteImage: async (req, res) => {
+        try {
+            const { id, index } = req.query;
+
+            const result = await projectService.deleteImage(id, index);
+            return res.send({
+                ok: true,
+                msg: "Project image deleted successfully",
+                data: result,
+            });
+        } catch (error) {
+            return res.send({
+                ok: false,
+                msg: error.message,
+            });
+        }
+    },
     delete: async (req, res) => {
         try {
             const { id } = req.query;
@@ -88,4 +105,22 @@ export default {
             });
         }
     },
+    addImage: async (req, res) => {
+        try {
+            const image = req?.files?.image;
+            const { id } = req.body;
+
+            const result = await projectService.addImage(id, image);
+            return res.send({
+                ok: true,
+                msg: "Project image added successfully",
+                data: result,
+            });
+        } catch (error) {
+            return res.send({
+                ok: false,
+                msg: error.message,
+            });
+        }
+    }
 }

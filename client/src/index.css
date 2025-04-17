@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+  font-family: 'Manrope', sans-serif;
+}
+
+@import "tailwindcss";
+
+body {
+  @apply bg-zinc-900 text-white
+}
+
+button {
+  @apply bg-emerald-500 rounded-[10px] h-[45px] px-[20px] cursor-pointer text-[14px] text-white active:scale-[0.95] duration-200 font-semibold shadow-[0_5px_15px] shadow-emerald-700/50 gap-1 flex items-center justify-center
+}
+
+button:disabled {
+  @apply bg-emerald-700 text-white/50 active:scale-100 cursor-not-allowed shadow-none
+}
+
+button.outlined {
+  @apply bg-transparent shadow-none border border-zinc-600 hover:bg-zinc-800 hover:border-zinc-800
+}
+
+input {
+  @apply bg-zinc-700 rounded-[10px] h-[45px] px-[20px] text-[14px] text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 duration-300 focus:border-transparent w-full
+}
+
+input[type='radio'] {
+  @apply w-[20px] p-0 h-[20px] text-emerald-500/50 border border-zinc-600 rounded-full appearance-none checked:bg-emerald-500 checked:border-transparent focus:ring-1 focus:ring-white focus:ring-offset-0
+}
