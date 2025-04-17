@@ -11,7 +11,7 @@ body {
 }
 
 button {
-  @apply bg-emerald-500 rounded-[10px] h-[45px] px-[20px] cursor-pointer text-[14px] text-white active:scale-[0.95] duration-200 font-semibold shadow-[0_5px_15px] shadow-emerald-700/50 gap-1 flex items-center justify-center
+  @apply bg-emerald-500 hover:bg-emerald-400 rounded-[10px] h-[45px] px-[20px] cursor-pointer text-[14px] text-white active:scale-[0.95] duration-200 font-semibold shadow-[0_5px_15px] shadow-emerald-700/50 gap-1 flex items-center justify-center
 }
 
 button:disabled {

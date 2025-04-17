@@ -6,5 +6,32 @@
         "projects": "Projects",
         "contact": "Contact",
         "request": "Send a request"
+    },
+    "request": {
+        "title": "Send a request",
+        "text": "Fill out the form below and we will contact you.",
+        "name": "Your name",
+        "phone": "Your phone number",
+        "telegram": "Telegram @username (optional)",
+        "type": "How would you like us to contact you?",
+        "via": {
+            "phone": "By phone",
+            "telegram": "Via Telegram"
+        },
+        "submit": "Send",
+        "success": "Your message has been sent successfully and we will contact you soon.",
+        "fill": "Please fill in the required fields.",
+        "telegram_error": "Telegram @username entered incorrectly",
+        "telegram_via_error": "Please enter your @username so we can contact you via telegram."
+    },
+    "intro": {
+        "stack": "Fullstack MERN Developer",
+        "title": "SAIDNET",
+        "text": {
+            "t1": "Your imagination —",
+            "t2": "comes to life in my work"
+        },
+        "call": "Call",
+        "request": "Send a request"
     }
 }

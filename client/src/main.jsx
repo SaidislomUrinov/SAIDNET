@@ -4,10 +4,14 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "./utils/i18n";
 import { Toaster } from "sonner";
+import { Provider } from "react-redux";
+import store from "./contexts/store.js";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
     <Toaster position="top-center" />
   </BrowserRouter>
 );

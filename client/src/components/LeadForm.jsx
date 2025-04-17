@@ -1,10 +1,14 @@
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { BiLoader } from "react-icons/bi";
+import { BiLoader, BiX } from "react-icons/bi";
 import { IMaskInput } from "react-imask";
-import { errorMsg } from "../utils/alert";
+import { errorMsg, successMsg } from "../utils/alert";
+import { useLocation, useNavigate } from "react-router-dom";
+import { post } from "../utils/fetching";
 function LeadForm() {
   const { t } = useTranslation();
+  const h = useLocation().hash;
+  const nv = useNavigate();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -28,15 +32,48 @@ function LeadForm() {
 
       if (via === "telegram" && !telegram)
         throw new Error(t("request.telegram_via_error"));
+
+      const { ok, msg } = await post("/order/create", {
+        name,
+        phone,
+        telegram,
+        via,
+      });
+
+      if (!ok) throw new Error(t(`request.${msg}`));
+
+      successMsg(t(`request.${msg}`));
+      close();
     } catch (error) {
       errorMsg(error.message);
     } finally {
       setDisabled(false);
     }
   };
+  const close = async () => {
+    setForm({
+      name: "",
+      phone: "",
+      telegram: "",
+      via: "phone", //telegram
+    });
+    nv("#");
+  };
   return (
-    <div className="flex items-center justify-center w-full h-[100vh] fixed top-0 left-0 backdrop-blur-sm">
-      <div className="flex items-start justify-start flex-col w-[90%] sm:w-[500px] p-[20px] rounded-[20px] bg-zinc-800 border border-zinc-700 gap-[20px]">
+    <div
+      className={`flex items-center justify-center w-full h-[100vh] fixed duration-300 top-0 left-0 backdrop-blur-sm ${
+        h === "#request" ? "z-[4] opacity-100" : "z-[-1] opacity-0 scale-0"
+      }`}
+    >
+      <div className="flex items-start justify-start flex-col relative w-[90%] sm:w-[500px] p-[20px] rounded-[20px] bg-zinc-800 border border-zinc-700 gap-[20px]">
+        {/*  */}
+        <button
+          onClick={close}
+          className="outlined absolute !bg-zinc-900 right-[-12px] top-[-12px] !rounded-full !p-0 w-[45px]"
+        >
+          <BiX className="text-[25px]" />
+        </button>
+        {/*  */}
         <div className="flex items-start justify-start flex-col">
           <p className="text-[20px] font-bold">{t("request.title")}</p>
           <p className="text-[15px] text-gray-300">{t("request.text")}</p>

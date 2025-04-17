@@ -12,8 +12,7 @@
         "text": "Pastdagi formani to'ldiring biz esa siz bilan aloqaga chiqamiz",
         "name": "Ismingiz",
         "phone": "Telefon raqamingiz",
-        "telegram": "Telegram @username ( Ixtiyoriy )",
-        "message": "Xabaringiz...",
+        "telegram": "Telegram @username (ixtiyoriy)",
         "type": "Sizga qanday aloqaga chiqsak ma'qul?",
         "via": {
             "phone": "Qo'ngiroq orqali",
@@ -24,5 +23,15 @@
         "fill": "Iltimos, majburiy maydonlarni to'ldiring",
         "telegram_error": "Telegram @username noto'g'ri kiritilgan",
         "telegram_via_error": "Iltimos, telegram orqali aloqaga chiqish uchun @username kiritishingiz kerak"
+    },
+    "intro": {
+        "stack": "Fullstack MERN Developer",
+        "title": "SAIDNET",
+        "text": {
+            "t1": "Sizning tasavvuringiz — ",
+            "t2": "mening ishimda jonlanadi"
+        },
+        "call": "Qo'ng'iroq qilish",
+        "request": "So'rov qoldirish"
     }
 }
