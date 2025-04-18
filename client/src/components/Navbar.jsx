@@ -16,17 +16,19 @@ function Navbar() {
   };
   return (
     <>
-      <Fade triggerOnce direction="down">
-        <div className="w-full h-[70px]">
-          <div className="flex z-[3] fixed top-0 left-0 items-center px-[2%] justify-between w-full h-[70px] bg-zinc-900/50 backdrop-blur-lg border-b border-zinc-700">
-            {/*  */}
-            <div className="flex items-center justify-start lg:w-[33%]">
+      <div className="w-full h-[70px]">
+        <div className="flex z-[3] fixed top-0 left-0 items-center px-[2%] justify-between w-full h-[70px] bg-zinc-900/50 backdrop-blur-lg border-b border-zinc-700">
+          {/*  */}
+          <div className="flex items-center justify-start lg:w-[33%]">
+            <Fade triggerOnce direction="down">
               <Link to={"#"} className="text-[30px] font-bold">
                 SAIDNET
               </Link>
-            </div>
-            {/*  */}
-            <div className="md:flex hidden items-center justify-center gap-[50px]">
+            </Fade>
+          </div>
+          {/*  */}
+          <div className="md:flex hidden items-center justify-center gap-[50px]">
+            <Fade triggerOnce direction="down">
               <Link
                 to={"#about"}
                 className="text-[16px] lg:text-[20px] text-gray-300 hover:text-white"
@@ -51,16 +53,21 @@ function Navbar() {
               >
                 {t("nav.contact")}
               </Link>
-            </div>
-            {/*  */}
-            <div className="flex items-center justify-end lg:w-[33%] gap-[30px]">
+            </Fade>
+          </div>
+          {/*  */}
+
+          <div className="flex items-center justify-end lg:w-[33%] gap-[30px]">
+            <Fade triggerOnce direction="down">
               <button
                 className="outlined !w-[45px] !p-[0]"
                 onClick={() => setOpenLang(!openLang)}
               >
                 <BiGlobe fontSize={20} />
               </button>
-              {/*  */}
+            </Fade>
+            {/*  */}
+            <Fade triggerOnce direction="down">
               <button
                 onClick={() => nv("#request")}
                 className="outlined !hidden md:!flex"
@@ -68,17 +75,19 @@ function Navbar() {
                 {t("nav.request")}
                 <FaArrowRight />
               </button>
-              {/*  */}
+            </Fade>
+            {/*  */}
+            <Fade triggerOnce direction="down">
               <button
                 className="outlined !w-[45px] !p-[0] md:!hidden"
                 onClick={() => setOpen(!open)}
               >
                 {!open ? <BiMenu fontSize={20} /> : <BiX fontSize={20} />}
               </button>
-            </div>
+            </Fade>
           </div>
         </div>
-      </Fade>
+      </div>
       <div
         className={`flex items-start justify-start flex-col rounded-b-[10px] px-[20px] gap-[20px] w-[200px] fixed right-[2%] lg:right-[155px] ${
           openLang ? "h-[215px] py-[20px] border-b border-x" : "h-0 border-none"

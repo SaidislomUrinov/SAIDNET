@@ -33,5 +33,16 @@
         },
         "call": "Qo'ng'iroq qilish",
         "request": "So'rov qoldirish"
+    },
+    "about": {
+        "title": "Men haqimda",
+        "text": "Men Full-Stack JavaScript dasturchisiman",
+        "text2": "Frontend va backend sohalarida bir necha yillik tajribaga egaman. Mening asosiy yo‘nalishlarim — React.js, Node.js, va MongoDB. Har bir loyihada sifat, aniqlik va funksionallikka katta e’tibor beraman. Maqsadim — zamonaviy, xavfsiz va foydalanuvchi uchun qulay web ilovalar yaratish."
+    },
+    "skills": {
+        "title": "Mahoratlar"
+    },
+    "projects": {
+        "title": "Loyihalar"
     }
 }

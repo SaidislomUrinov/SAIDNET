@@ -1,7 +1,7 @@
 {
     "lang": "en",
     "nav": {
-        "about": "About",
+        "about": "About Me",
         "skills": "Skills",
         "projects": "Projects",
         "contact": "Contact",
@@ -33,5 +33,13 @@
         },
         "call": "Call",
         "request": "Send a request"
+    },
+    "about": {
+        "title": "About Me",
+        "text": "I am a Full-Stack JavaScript Developer",
+        "text2": "I have several years of experience in frontend and backend development. My main areas of expertise are React.js, Node.js, and MongoDB. I focus on quality, accuracy, and functionality in each project. My goal is to create modern, secure, and user-friendly web applications."
+    },
+    "skills": {
+        "title": "Skills"
     }
 }

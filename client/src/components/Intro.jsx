@@ -37,7 +37,7 @@ function Intro() {
   return (
     <div
       id="intro"
-      className="relative flex items-center justify-center gap-1 flex-col w-full h-[calc(100vh-100px)]"
+      className="relative flex items-center justify-center gap-1 flex-col w-full h-[calc(100vh-70px)]"
     >
       <div
         ref={vantaRef}
